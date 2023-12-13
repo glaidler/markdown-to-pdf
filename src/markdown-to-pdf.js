@@ -235,6 +235,7 @@ class MarkdownToPDF {
 		while(m = imgTagRegex.exec(html)) {
 			try {
 				let path = m[1].replace(imagePathRegex, 'http://localhost:3000');
+				console.log('Converting image: ' + path);
 				let image = await encodeImage(path).then(function (image) {
 					return image;
 				}).catch(function (err) {
